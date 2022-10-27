@@ -7,7 +7,7 @@ public class ActionBusyUI : MonoBehaviour
 
     private void Start()
     {
-        UnitActionSystem.Instance.OnBusyChanged += UnitActionSystem_onBusyChanged;
+        UnitActionSystem.Instance.OnBusyChanged += UnitActionSystem_OnBusyChanged;
 
         Hide();
     }
@@ -22,13 +22,12 @@ public class ActionBusyUI : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void UnitActionSystem_onBusyChanged(object sender, bool isBusy)
+    private void UnitActionSystem_OnBusyChanged(object sender, bool isBusy)
     {
         if (isBusy)
         {
             Show();
-        }
-        else
+        } else
         {
             Hide();
         }

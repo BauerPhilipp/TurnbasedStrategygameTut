@@ -31,5 +31,5 @@ public abstract class BaseAction : MonoBehaviour
     {
         return 1;
     }
-
+    
 }

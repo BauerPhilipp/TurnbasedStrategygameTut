@@ -69,13 +69,15 @@ public class UnitActionSystem : MonoBehaviour
             {
                 return;
             }
-            if (!selectedUnit.CanSpendActionPointsToTakeAction(selectedAction))
+
+            if (!selectedUnit.TrySpendActionPointsToTakeAction(selectedAction))
             {
                 return;
             }
 
             SetBusy();
             selectedAction.TakeAction(mouseGridPosition, ClearBusy);
+
             OnActionStarted?.Invoke(this, EventArgs.Empty);
         }
     }
@@ -91,6 +93,7 @@ public class UnitActionSystem : MonoBehaviour
     private void ClearBusy()
     {
         isBusy = false;
+
         OnBusyChanged?.Invoke(this, isBusy);
     }
 

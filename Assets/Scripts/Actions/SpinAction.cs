@@ -54,5 +54,5 @@ public class SpinAction : BaseAction
     {
         return 2;
     }
-
+    
 }
